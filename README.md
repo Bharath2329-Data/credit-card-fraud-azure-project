@@ -34,7 +34,6 @@ Identify fraudulent transactions using rule-based detection and provide business
 
 The goal of Day 1 is to set up the complete Azure environment and project structure required to build an end-to-end Credit Card Fraud Detection Data Pipeline.
 
----
 
 ## Architecture Overview
 
@@ -42,7 +41,6 @@ The project follows a modern data engineering architecture using Azure services:
 
 **Source → Azure Data Factory → ADLS Gen2 (Bronze/Silver/Gold) → Azure Databricks → SQL Analytics → Power BI**
 
----
 
 ## Azure Services Created
 
@@ -52,7 +50,7 @@ The project follows a modern data engineering architecture using Azure services:
 * Purpose: Logical container to manage all Azure resources together
 
 
-### 2. 💾 Azure Data Lake Storage Gen2
+### 2. Azure Data Lake Storage Gen2
 
 * **Storage Account:** stfraud<yourname>
 * **Feature Enabled:** Hierarchical Namespace (ADLS Gen2)
@@ -63,7 +61,7 @@ The project follows a modern data engineering architecture using Azure services:
 * **silver** → Cleaned and transformed data
 * **gold** → Business-ready aggregated data
 
-### 3. 🔄 Azure Data Factory
+### 3. Azure Data Factory
 
 * **Name:** adf-fraud-project
 * Purpose: Data ingestion and pipeline orchestration
