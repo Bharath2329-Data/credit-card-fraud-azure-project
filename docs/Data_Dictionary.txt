@@ -1,0 +1,25 @@
+# Data Dictionary
+
+## transactions.csv
+- transaction_id Unique ID
+- customer_id Customer reference
+- merchant_id Merchant reference
+- transaction_timestamp Date & time
+- amount Transaction value
+- transaction_type PurchaseWithdrawal
+- merchant_category Merchant type
+- city Transaction city
+- state Transaction state
+- channel POS  Online
+- card_type Credit  Debit
+
+## customers.csv
+- customer_id Unique ID
+- full_name Name
+- home_state Customer home
+- customer_segment PremiumStandard
+
+## merchants.csv
+- merchant_id Unique ID
+- merchant_category Business type
+- risk_level Low  Medium  High
