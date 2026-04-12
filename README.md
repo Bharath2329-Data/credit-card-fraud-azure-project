@@ -28,12 +28,11 @@ Identify fraudulent transactions using rule-based detection and provide business
 - Day 9: Orchestration
 - Day 10: Final Polish
 
-  # Day 1 — Azure Project Setup & Architecture
+# Day 1 — Azure Project Setup & Architecture
 
 ## Objective
 
 The goal of Day 1 is to set up the complete Azure environment and project structure required to build an end-to-end Credit Card Fraud Detection Data Pipeline.
-
 
 ## Architecture Overview
 
@@ -44,11 +43,12 @@ The project follows a modern data engineering architecture using Azure services:
 
 ## Azure Services Created
 
-### 1.Resource Group
+### 1. Resource Group
 
 * **Name:** rg-fraud-project
 * Purpose: Logical container to manage all Azure resources together
 
+---
 
 ### 2. Azure Data Lake Storage Gen2
 
@@ -61,6 +61,7 @@ The project follows a modern data engineering architecture using Azure services:
 * **silver** → Cleaned and transformed data
 * **gold** → Business-ready aggregated data
 
+
 ### 3. Azure Data Factory
 
 * **Name:** adf-fraud-project
@@ -68,12 +69,12 @@ The project follows a modern data engineering architecture using Azure services:
 
 ### 4. Azure Databricks
 
-**Workspace:** dbx-fraud-project
-  Purpose: Data transformation, fraud detection logic, and analytics
+* **Workspace:** dbx-fraud-project
+* Purpose: Data transformation, fraud detection logic, and analytics
 
-## Project Structure (GitHub)
+## 📁 Project Structure (GitHub)
 
-## Project Structure (GitHub)
+```bash
 credit-card-fraud-azure-project/
 │
 ├── data/
@@ -85,6 +86,8 @@ credit-card-fraud-azure-project/
 ├── dashboard/
 ├── docs/
 └── README.md
+```
+
 
 ## Artifacts
 
@@ -116,7 +119,7 @@ To ensure the project stays within budget:
 * No pipelines were executed
 * Only essential resources were provisioned
 * All services configured using basic/standard tiers
-  
+
 ## Key Outcome
 
 Successfully established the foundational infrastructure required to build a scalable and production-like fraud detection data pipeline on Azure.
