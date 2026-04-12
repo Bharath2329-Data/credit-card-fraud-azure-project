@@ -73,7 +73,7 @@ The project follows a modern data engineering architecture using Azure services:
 
 ## Project Structure (GitHub)
 
-bash
+## Project Structure (GitHub)
 credit-card-fraud-azure-project/
 │
 ├── data/
