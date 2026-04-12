@@ -28,6 +28,101 @@ Identify fraudulent transactions using rule-based detection and provide business
 - Day 9: Orchestration
 - Day 10: Final Polish
 
+  # Day 1 — Azure Project Setup & Architecture
+
+## Objective
+
+The goal of Day 1 is to set up the complete Azure environment and project structure required to build an end-to-end Credit Card Fraud Detection Data Pipeline.
+
+---
+
+## Architecture Overview
+
+The project follows a modern data engineering architecture using Azure services:
+
+**Source → Azure Data Factory → ADLS Gen2 (Bronze/Silver/Gold) → Azure Databricks → SQL Analytics → Power BI**
+
+---
+
+## Azure Services Created
+
+### 1.Resource Group
+
+* **Name:** rg-fraud-project
+* Purpose: Logical container to manage all Azure resources together
+
+
+### 2. 💾 Azure Data Lake Storage Gen2
+
+* **Storage Account:** stfraud<yourname>
+* **Feature Enabled:** Hierarchical Namespace (ADLS Gen2)
+
+#### Containers Created:
+
+* **bronze** → Raw data storage
+* **silver** → Cleaned and transformed data
+* **gold** → Business-ready aggregated data
+
+### 3. 🔄 Azure Data Factory
+
+* **Name:** adf-fraud-project
+* Purpose: Data ingestion and pipeline orchestration
+
+### 4. Azure Databricks
+
+**Workspace:** dbx-fraud-project
+  Purpose: Data transformation, fraud detection logic, and analytics
+
+## Project Structure (GitHub)
+
+bash
+credit-card-fraud-azure-project/
+│
+├── data/
+│   ├── raw/
+│   └── sample/
+├── notebooks/
+├── pipelines/
+├── sql/
+├── dashboard/
+├── docs/
+└── README.md
+
+## Artifacts
+
+Screenshots captured for documentation:
+
+* Azure Resource Group
+* Storage Account
+* ADLS Containers (bronze, silver, gold)
+* Azure Data Factory
+* Azure Databricks Workspace
+
+Stored in:
+
+docs/screenshots/
+
+## Key Concepts Learned
+
+* Understanding of Azure resource organization
+* Importance of ADLS Gen2 for data lake architecture
+* Role of Data Factory in data ingestion
+* Role of Databricks in data transformation
+* Medallion architecture (Bronze → Silver → Gold)
+
+## Cost Optimization Strategy
+
+To ensure the project stays within budget:
+
+* No Databricks clusters were created or run on Day 1
+* No pipelines were executed
+* Only essential resources were provisioned
+* All services configured using basic/standard tiers
+  
+## Key Outcome
+
+Successfully established the foundational infrastructure required to build a scalable and production-like fraud detection data pipeline on Azure.
+
 # Day 2 — Dataset Creation for Fraud Detection
 
 ## Objective
