@@ -1,4 +1,5 @@
 # Credit Card Fraud Detection Pipeline (Azure)
+![Fraud Pipeline](docs/images/fraud_thumbnail.png)
 
 ## Project Overview
 This project builds an end-to-end data engineering pipeline to detect suspicious credit card transactions using Azure services.
