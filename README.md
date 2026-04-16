@@ -73,7 +73,7 @@ The project follows a modern data engineering architecture using Azure services:
 * **Workspace:** dbx-fraud-project
 * Purpose: Data transformation, fraud detection logic, and analytics
 
-## 📁 Project Structure (GitHub)
+## Project Structure (GitHub)
 
 ```bash
 credit-card-fraud-azure-project/
@@ -256,15 +256,15 @@ data/
 
 A realistic, fraud-oriented dataset is now ready for ingestion into Azure Data Lake (Bronze layer) using Azure Data Factory in the next phase.
 
-# 📅 Day 3 — Data Ingestion using Azure Data Factory (Bronze Layer)
+# Day 3 — Data Ingestion using Azure Data Factory (Bronze Layer)
 
-## 🎯 Objective
+## Objective
 
 The goal of Day 3 is to ingest raw CSV datasets into Azure Data Lake Storage Gen2 (Bronze layer) using Azure Data Factory pipelines.
 
 ---
 
-## 🧠 Overview
+## Overview
 
 In this phase, raw datasets created on Day 2 are moved into the cloud storage layer without any transformations. This ensures data is preserved in its original format for traceability and reprocessing.
 
@@ -287,7 +287,7 @@ The following datasets were ingested:
 
 ---
 
-## 🏗️ Implementation Steps
+## Implementation Steps
 
 ### 1. Data Upload to ADLS (Bronze)
 
@@ -719,6 +719,36 @@ docs/screenshots/
 Successfully developed a fraud detection framework that identifies suspicious transactions using rule-based scoring and prepares data for business analytics and reporting.
 
 ---
+
+# Day 6 — Gold Layer Aggregations
+
+## Objective
+To build business-level aggregation tables from fraud-enriched data for analytics and reporting.
+
+## Work Completed
+- Read fraud dataset from Gold layer
+- Created aggregation tables:
+  - Daily fraud summary
+  - Fraud by region
+  - Fraud by merchant category
+  - High-risk customers
+
+## Key Metrics
+- Total transactions
+- Suspicious transactions
+- Fraud rate
+- Total amount
+- Suspicious amount
+
+## Output
+Stored in Gold layer:
+- fraud_summary_daily
+- fraud_by_region
+- fraud_by_merchant_category
+- high_risk_customers
+
+## Outcome
+Prepared analytics-ready datasets for SQL queries and Power BI dashboards.
 
 
 
