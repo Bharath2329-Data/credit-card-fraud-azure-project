@@ -720,35 +720,170 @@ Successfully developed a fraud detection framework that identifies suspicious tr
 
 ---
 
-# Day 6 — Gold Layer Aggregations
+# Day 6 — Gold Layer Aggregations (Business-Ready Tables)
 
 ## Objective
-To build business-level aggregation tables from fraud-enriched data for analytics and reporting.
 
-## Work Completed
-- Read fraud dataset from Gold layer
-- Created aggregation tables:
-  - Daily fraud summary
-  - Fraud by region
-  - Fraud by merchant category
-  - High-risk customers
+The goal of Day 6 is to transform fraud-enriched data into business-level aggregation tables that support analytics, reporting, and dashboarding.
 
-## Key Metrics
-- Total transactions
-- Suspicious transactions
-- Fraud rate
-- Total amount
-- Suspicious amount
+---
 
-## Output
-Stored in Gold layer:
-- fraud_summary_daily
-- fraud_by_region
-- fraud_by_merchant_category
-- high_risk_customers
+## Overview
+
+After implementing fraud detection logic on Day 5, the dataset now contains risk scores and fraud flags. In this phase, we aggregate this data into meaningful business insights for decision-making and visualization.
+
+---
+
+## Tools Used
+
+* Azure Databricks
+* Apache Spark (PySpark)
+* Azure Data Lake Storage Gen2
+
+---
+
+## Input Data
+
+* `gold/suspicious_transactions/` (Fraud-enriched dataset from Day 5)
+
+---
+
+## Aggregation Tables Created
+
+### 1. fraud_summary_daily
+
+#### Business Question:
+
+How is fraud trending over time?
+
+**Metrics:**
+
+* total_transactions
+* suspicious_transactions
+* total_amount
+* suspicious_amount
+* fraud_rate
+
+---
+
+### 2. fraud_by_region
+
+#### Business Question:
+
+Which regions (states) have the highest fraud activity?
+
+**Metrics:**
+
+* total_transactions
+* suspicious_transactions
+* total_amount
+* fraud_rate
+
+---
+
+### 3. fraud_by_merchant_category
+
+#### Business Question:
+
+Which merchant categories are most associated with fraud?
+
+**Metrics:**
+
+* total_transactions
+* suspicious_transactions
+* suspicious_amount
+
+---
+
+### 4. high_risk_customers
+
+#### Business Question:
+
+Who are the highest-risk customers based on transaction behavior?
+
+**Metrics:**
+
+* suspicious_count
+* suspicious_total_amount
+* avg_risk_score
+
+---
+
+## Output Data (Gold Layer)
+
+All aggregation tables are stored in Parquet format:
+
+```bash
+gold/
+├── suspicious_transactions/
+├── fraud_summary_daily/
+├── fraud_by_region/
+├── fraud_by_merchant_category/
+└── high_risk_customers/
+```
+
+---
+
+## Key Calculations
+
+* **Fraud Rate** = suspicious_transactions / total_transactions
+* **Suspicious Amount** = sum of transaction amounts where fraud_flag = 'Yes'
+* **High-Risk Customers** = customers with highest suspicious transaction volume and amount
+
+---
+
+## Why These Tables Matter
+
+These tables are designed for:
+
+* SQL-based business analysis
+* Power BI dashboards
+* Fraud monitoring and reporting
+* Executive-level insights
+
+---
+
+## Artifacts
+
+Captured:
+
+* Aggregation outputs from Databricks
+* Gold layer storage structure
+* Sample results for each table
+
+ Stored in:
+
+```
+docs/screenshots/
+```
+
+---
+
+## Key Learnings
+
+* Building business-level aggregations using PySpark
+* Translating raw data into actionable insights
+* Designing datasets for BI tools
+* Understanding fraud KPIs and metrics
+
+---
+
+## Challenges & Fixes
+
+* Ensured accurate fraud rate calculations (handled division properly)
+* Verified fraud_flag consistency before aggregation
+* Checked grouping columns for correctness
+* Handled null values in aggregation logic
+
+---
 
 ## Outcome
-Prepared analytics-ready datasets for SQL queries and Power BI dashboards.
+
+Successfully created analytics-ready Gold layer datasets that power SQL queries and Power BI dashboards, enabling meaningful fraud insights.
+
+---
+
+
 
 
 
