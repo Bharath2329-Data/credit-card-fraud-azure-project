@@ -1,0 +1,4 @@
+SELECT *
+FROM high_risk_customers
+ORDER BY suspicious_total_amount DESC
+LIMIT 10;

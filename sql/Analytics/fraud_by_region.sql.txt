@@ -1,0 +1,7 @@
+SELECT 
+    transaction_state,
+    total_transactions,
+    suspicious_transactions,
+    fraud_rate
+FROM fraud_by_region
+ORDER BY fraud_rate DESC;

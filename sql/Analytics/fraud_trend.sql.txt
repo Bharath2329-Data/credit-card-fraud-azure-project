@@ -1,0 +1,7 @@
+SELECT 
+    transaction_date,
+    total_transactions,
+    suspicious_transactions,
+    fraud_rate
+FROM fraud_summary_daily
+ORDER BY transaction_date;

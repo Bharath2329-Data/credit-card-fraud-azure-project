@@ -1,0 +1,6 @@
+SELECT 
+    card_type,
+    COUNT(*) AS total_transactions,
+    SUM(CASE WHEN fraud_flag = 'Yes' THEN 1 ELSE 0 END) AS fraud_count
+FROM suspicious_transactions
+GROUP BY card_type;
