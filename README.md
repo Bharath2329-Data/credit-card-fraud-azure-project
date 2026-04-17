@@ -277,7 +277,7 @@ In this phase, raw datasets created on Day 2 are moved into the cloud storage la
 
 ---
 
-## 📊 Data Sources
+## Data Sources
 
 The following datasets were ingested:
 
@@ -882,6 +882,189 @@ docs/screenshots/
 Successfully created analytics-ready Gold layer datasets that power SQL queries and Power BI dashboards, enabling meaningful fraud insights.
 
 ---
+
+# Day 7 — SQL Business Analysis (Fraud Insights)
+
+## Objective
+
+The goal of Day 7 is to perform business analysis on fraud data using SQL queries and extract meaningful insights from Gold layer datasets.
+
+---
+
+## Overview
+
+After building the Gold layer aggregation tables, SQL is used to analyze fraud patterns, customer behavior, and financial impact. This step bridges data engineering and business analytics.
+
+---
+
+## Tools Used
+
+* Azure Databricks (SQL)
+* SQL (Spark SQL)
+* Azure Data Lake Storage Gen2
+
+---
+
+## Data Sources (Gold Layer)
+
+* `fraud_summary_daily`
+* `fraud_by_region`
+* `fraud_by_merchant_category`
+* `high_risk_customers`
+* `suspicious_transactions`
+
+---
+
+## Implementation Steps
+
+### 1. Created Temporary Views
+
+* Loaded Gold datasets into SQL views for querying
+
+---
+
+### 2. Developed Business Queries
+
+The following analytical queries were implemented:
+
+---
+
+### Daily Fraud Trend
+
+Analyzed how fraud activity changes over time.
+
+**Insight:** Helps identify increasing or decreasing fraud patterns.
+
+---
+
+### Fraud by Region
+
+Identified states with highest fraud rates.
+
+**Insight:** Enables region-based fraud monitoring.
+
+---
+
+### Fraud by Merchant Category
+
+Analyzed fraud across different industries.
+
+**Insight:** Highlights high-risk merchant segments.
+
+---
+
+### High-Risk Customers
+
+Identified customers with highest suspicious activity.
+
+**Insight:** Supports fraud investigation and customer risk profiling.
+
+---
+
+### Total Fraud Loss
+
+Calculated total monetary impact of fraudulent transactions.
+
+**Insight:** Measures financial exposure due to fraud.
+
+---
+
+### Fraud by Hour
+
+Analyzed fraud activity by time of day.
+
+**Insight:** Detects peak fraud hours (e.g., night transactions).
+
+---
+
+### Fraud by Card Type
+
+Compared fraud across Credit vs Debit cards.
+
+**Insight:** Identifies risk distribution by payment type.
+
+---
+
+### Fraud by Channel
+
+Compared fraud in Online vs POS transactions.
+
+**Insight:** Highlights digital fraud trends.
+
+---
+
+### Average Fraud Amount
+
+Calculated typical size of fraudulent transactions.
+
+**Insight:** Helps understand severity of fraud events.
+
+---
+
+### Customer Segment Risk
+
+Analyzed fraud by customer segment.
+
+**Insight:** Identifies whether Premium or Standard users are more vulnerable.
+
+---
+
+## Project Structure Update
+
+```bash id="1trgkm"
+sql/
+└── analytics/
+    ├── fraud_trend.sql
+    ├── fraud_by_region.sql
+    ├── fraud_by_merchant_category.sql
+    ├── high_risk_customers.sql
+    ├── fraud_by_channel.sql
+    ├── fraud_by_card_type.sql
+    └── additional_analysis.sql
+```
+
+---
+
+##  Artifacts
+
+Captured:
+
+* SQL query results
+* Analytical outputs
+* Databricks SQL notebook
+
+ Stored in:
+
+```id="x3e27z"
+docs/screenshots/
+```
+
+---
+
+## Key Learnings
+
+* Writing business-focused SQL queries
+* Analyzing fraud trends and patterns
+* Converting data into actionable insights
+* Understanding real-world fraud analytics use cases
+
+---
+
+## Challenges & Fixes
+
+* Ensured correct filtering using `fraud_flag = 'Yes'`
+* Verified timestamp functions (HOUR, DATE)
+* Handled aggregation accuracy
+* Validated data consistency before analysis
+
+---
+
+## Outcome
+
+Successfully performed SQL-based analysis on fraud data, generating actionable insights that can support business decisions and fraud monitoring strategies.
+
+---
+
 
 
 
