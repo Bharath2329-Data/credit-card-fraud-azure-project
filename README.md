@@ -1065,6 +1065,169 @@ Successfully performed SQL-based analysis on fraud data, generating actionable i
 
 ---
 
+# Day 8 — Power BI Dashboard (Fraud Analytics Visualization)
+
+## Objective
+
+The goal of Day 8 is to build an interactive Power BI dashboard to visualize fraud insights and enable business users to monitor suspicious transactions effectively.
+
+---
+
+## Overview
+
+After preparing Gold layer datasets and SQL insights, this phase focuses on creating a user-friendly dashboard for fraud analysis. The dashboard highlights key performance indicators (KPIs), trends, and risk patterns.
+
+---
+
+## Tools Used
+
+* Power BI Desktop
+* Azure Databricks (data export)
+* Azure Data Lake Storage Gen2
+
+---
+
+## Data Sources
+
+The following datasets were used:
+
+* `fraud_summary_daily`
+* `fraud_by_region`
+* `fraud_by_merchant_category`
+* `high_risk_customers`
+* `suspicious_transactions`
+
+---
+
+##  Dashboard Structure
+
+###  Page 1 — Executive Overview
+
+#### KPIs:
+
+* Total Transactions
+* Suspicious Transactions
+* Fraud Rate (%)
+* Total Fraud Amount
+
+#### Visuals:
+
+*  Fraud Trend Over Time (Line Chart)
+*  Fraud by Region (Bar Chart)
+*  Fraud by Merchant Category (Bar Chart)
+
+---
+
+###  Page 2 — Fraud Analysis
+
+#### Visuals:
+
+*  Fraud by Hour (Column Chart)
+*  Fraud by Channel (Pie Chart)
+*  Fraud by Card Type (Donut Chart)
+
+---
+
+###  Page 3 — Customer Insights
+
+#### Visuals:
+
+*  Top High-Risk Customers (Table)
+*  Customer Segment Risk (Bar Chart)
+*  Detailed Transaction View (Table)
+
+---
+
+## Interactivity Features
+
+Added slicers (filters) for:
+
+* Date
+* State
+* Merchant Category
+* Channel
+* Risk Level
+
+These filters enable dynamic and interactive analysis across all dashboard pages.
+
+---
+
+## Design Enhancements
+
+* Dashboard title: **"Credit Card Fraud Detection Dashboard"**
+* Consistent color theme:
+
+  *  Red → Fraud
+  *  Blue → Normal
+* Proper alignment and spacing
+* Borders and shadows for better visualization
+
+---
+
+## Output
+
+Dashboard file stored in:
+
+```bash id="jhlfql"
+dashboard/fraud_dashboard.pbix
+```
+
+---
+
+## Artifacts
+
+Captured:
+
+* Full dashboard screenshots
+* Individual page visuals
+* Key insights views
+
+ Stored in:
+
+```id="hvwyy2"
+docs/screenshots/
+```
+
+---
+
+## Key Insights Delivered
+
+* Fraud trends over time
+* High-risk regions
+* Fraud-prone merchant categories
+* Customer risk profiling
+* Channel-based fraud distribution
+* Transaction-level fraud details
+
+---
+
+## Key Learnings
+
+* Building interactive dashboards in Power BI
+* Visualizing business KPIs effectively
+* Designing user-friendly analytics reports
+* Connecting data engineering outputs to BI tools
+
+---
+
+## Challenges & Fixes
+
+* Ensured correct data relationships between tables
+* Fixed field mapping issues in visuals
+* Adjusted date formats for proper trend analysis
+* Verified filter interactions across visuals
+
+---
+
+## Outcome
+
+Developed a professional, interactive fraud analytics dashboard that enables stakeholders to monitor fraud patterns and make data-driven decisions.
+
+---
+
+
+
+
 
 
 
