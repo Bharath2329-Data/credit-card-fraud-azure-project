@@ -1142,7 +1142,7 @@ The following datasets were used:
 *  Top High-Risk Customers (Table)
 *  Customer Segment Risk (Bar Chart)
 *  Detailed Transaction View (Table)
-*  
+  
 ## Customer Insights Dashboard
 
 ![Customer Insights](docs/Day8_Screenshots/Customer_Insights.png) 
