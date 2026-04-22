@@ -1116,6 +1116,9 @@ The following datasets were used:
 *  Fraud by Region (Bar Chart)
 *  Fraud by Merchant Category (Bar Chart)
 
+## Executive Overview Dashboard
+
+![Executive Overview](docs/Day8_Screenshots/Executive_overview.png)
 ---
 
 ###  Page 2 — Fraud Analysis
