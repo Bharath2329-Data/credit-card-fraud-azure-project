@@ -1130,9 +1130,9 @@ The following datasets were used:
 *  Fraud by Card Type (Donut Chart)
 
  
-## Customer Insights Dashboard
+## Fraud Analysis Dashboard
 
-![Customer Insights](docs/Day8_Screenshots/Customer_Insights.png) 
+![Fraud Analysis](docs/Day8_Screenshots/Fraud_Analysis.png)
 ---
 
 ###  Page 3 — Customer Insights
@@ -1143,9 +1143,9 @@ The following datasets were used:
 *  Customer Segment Risk (Bar Chart)
 *  Detailed Transaction View (Table)
 *  
-## Fraud Analysis Dashboard
+## Customer Insights Dashboard
 
-![Fraud Analysis](docs/Day8_Screenshots/Fraud_Analysis.png)
+![Customer Insights](docs/Day8_Screenshots/Customer_Insights.png) 
 ---
 
 ## Interactivity Features
