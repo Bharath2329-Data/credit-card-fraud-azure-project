@@ -1391,6 +1391,276 @@ Successfully built a production-style orchestrated pipeline that automates the e
 
 ---
 
+# Credit Card Fraud Detection Pipeline (Azure Data Engineering Project)
+
+## Project Overview
+
+This project demonstrates an end-to-end data engineering pipeline for detecting and analyzing credit card fraud using Azure cloud services. It follows a modern **Medallion Architecture (Bronze → Silver → Gold)** and delivers actionable business insights through SQL analytics and an interactive dashboard.
+
+---
+
+## Business Problem
+
+Financial institutions face significant losses due to fraudulent transactions. The goal of this project is to:
+
+* Identify suspicious credit card transactions
+* Analyze fraud patterns across regions, customers, and merchant categories
+* Enable data-driven decision-making through dashboards and analytics
+
+---
+
+## Architecture
+
+```
+Source (CSV Files)
+        ↓
+Azure Data Factory (Ingestion)
+        ↓
+ADLS Gen2 (Bronze Layer - Raw Data)
+        ↓
+Azure Databricks (Silver Layer - Cleaned Data)
+        ↓
+Azure Databricks (Fraud Detection Logic)
+        ↓
+ADLS Gen2 (Gold Layer - Aggregated Data)
+        ↓
+SQL Analytics
+        ↓
+Power BI Dashboard
+```
+
+---
+
+## Tech Stack
+
+* **Azure Data Factory** — Data ingestion and orchestration
+* **Azure Data Lake Storage Gen2** — Data lake storage
+* **Azure Databricks (PySpark)** — Data transformation and fraud logic
+* **SQL (Databricks SQL)** — Business analysis
+* **Power BI** — Data visualization
+
+---
+
+## Datasets
+
+Three datasets were used:
+
+### Transactions
+
+* Contains transaction-level data (amount, timestamp, location, etc.)
+
+### Customers
+
+* Customer demographic and account information
+
+### Merchants
+
+* Merchant details and risk classification
+
+---
+
+## Fraud Detection Logic
+
+A rule-based approach was implemented using the following indicators:
+
+* High transaction amount
+* Location mismatch (customer vs transaction)
+* High-risk merchant categories
+* Night-time transactions
+* Rapid repeat transactions
+
+---
+
+## Risk Scoring Model
+
+Each fraud indicator contributes to a weighted risk score:
+
+| Rule               | Score |
+| ------------------ | ----- |
+| High Amount        | 40    |
+| Location Mismatch  | 25    |
+| High-Risk Merchant | 15    |
+| Night Transaction  | 10    |
+| Rapid Repeat       | 20    |
+
+### Fraud Classification:
+
+* **High Risk** → Score ≥ 50
+* **Medium Risk** → Score 25–49
+* **Low Risk** → Score < 25
+
+---
+
+## Data Architecture (Medallion Layers)
+
+### Bronze Layer
+
+* Raw data ingested using Azure Data Factory
+* Stored as CSV in ADLS
+
+---
+
+### Silver Layer
+
+* Cleaned and standardized data
+* Removed duplicates, handled nulls
+* Converted to Parquet format
+
+---
+
+###  Gold Layer
+
+Business-ready aggregated tables:
+
+* `fraud_summary_daily`
+* `fraud_by_region`
+* `fraud_by_merchant_category`
+* `high_risk_customers`
+* `suspicious_transactions`
+
+---
+
+## SQL Business Insights
+
+Key analyses performed:
+
+* Fraud trends over time
+* Fraud by region
+* Fraud by merchant category
+* High-risk customers
+* Fraud by channel and card type
+* Total fraud loss
+
+---
+
+## Power BI Dashboard
+
+### Dashboard Features:
+
+* Executive overview with KPIs
+* Fraud trends and regional analysis
+* Merchant and customer risk insights
+* Interactive filters for dynamic exploration
+
+ File:
+
+```
+dashboard/fraud_dashboard.pbix
+```
+
+---
+
+## Pipeline Orchestration
+
+A master pipeline was built using Azure Data Factory to automate:
+
+```
+Ingestion → Transformation → Fraud Detection → Aggregation
+```
+
+---
+
+## Data Validation
+
+Implemented data quality checks:
+
+* Row count validation
+* Fraud distribution checks
+* Null value checks
+* Duplicate detection
+
+---
+
+## Cost Optimization
+
+* Small dataset (≤ 50 MB)
+* Single-node Databricks cluster
+* Auto-termination enabled
+* Manual pipeline triggers
+* Efficient Parquet storage
+
+---
+
+## Project Structure
+
+```
+credit-card-fraud-azure-project/
+│
+├── data/
+│   └── raw/
+├── notebooks/
+│   ├── 01_bronze_to_silver
+│   ├── 02_fraud_detection_logic
+│   └── 03_gold_layer_tables
+├── pipelines/
+├── sql/
+│   └── analytics/
+├── dashboard/
+│   └── fraud_dashboard.pbix
+├── docs/
+│   ├── screenshots/
+│   └── data_dictionary.md
+└── README.md
+```
+
+---
+
+## Project Artifacts
+
+* Architecture diagram
+* Pipeline screenshots
+* Databricks notebooks
+* Power BI dashboard
+
+---
+
+## Key Achievements
+
+* Built end-to-end Azure data pipeline
+* Implemented fraud detection logic
+* Designed business-level aggregation tables
+* Delivered interactive dashboard
+* Applied cost-efficient cloud practices
+
+---
+
+## Skills Demonstrated
+
+* Data Engineering (ETL/ELT)
+* PySpark (Databricks)
+* SQL Analytics
+* Data Modeling (Medallion Architecture)
+* Cloud (Azure)
+* Data Visualization (Power BI)
+
+---
+
+## How to Run the Project
+
+1. Upload CSV files to ADLS Bronze layer
+2. Run ADF ingestion pipelines
+3. Execute Databricks notebooks in sequence
+4. Run master pipeline
+5. Open Power BI dashboard
+
+---
+
+## Future Improvements
+
+* Real-time streaming (Kafka / Event Hub)
+* Machine Learning fraud detection model
+* Alerts and monitoring system
+* CI/CD pipeline integration
+
+---
+
+## Author
+
+**Bharath Reddy**
+
+---
+
+
 
 
 
