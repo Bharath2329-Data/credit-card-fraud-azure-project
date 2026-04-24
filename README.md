@@ -270,7 +270,7 @@ In this phase, raw datasets created on Day 2 are moved into the cloud storage la
 
 ---
 
-## ⚙️ Tools Used
+## Tools Used
 
 * Azure Data Factory
 * Azure Data Lake Storage Gen2 (ADLS Gen2)
@@ -1235,8 +1235,161 @@ Developed a professional, interactive fraud analytics dashboard that enables sta
 
 ---
 
+# Day 9 — Pipeline Orchestration & Data Validation
 
+## Objective
 
+The goal of Day 9 is to orchestrate the complete data pipeline using a master workflow and implement data validation checks to ensure reliability and data quality.
+
+---
+
+## Overview
+
+After building individual components (ingestion, transformation, fraud detection, and aggregation), this phase integrates them into a unified pipeline. The system is designed to simulate a production-ready data engineering workflow.
+
+---
+
+## Tools Used
+
+* Azure Data Factory
+* Azure Databricks
+* Azure Data Lake Storage Gen2
+
+---
+
+## Pipeline Architecture
+
+A master pipeline was created to orchestrate all stages of the data pipeline:
+
+```text
+Ingestion → Silver Transformation → Fraud Detection → Gold Aggregation
+```
+
+---
+
+## Master Pipeline Components
+
+### 1. Data Ingestion
+
+* Executes pipelines:
+
+  * `pl_ingest_customers`
+  * `pl_ingest_merchants`
+  * `pl_ingest_transactions`
+
+---
+
+### 2. Silver Layer Transformation
+
+* Databricks Notebook:
+
+  * `01_bronze_to_silver`
+* Cleans and standardizes raw data
+
+---
+
+### 3. Fraud Detection Logic
+
+* Databricks Notebook:
+
+  * `02_fraud_detection_logic`
+* Applies fraud rules and generates risk scores
+
+---
+
+### 4. Gold Layer Aggregations
+
+* Databricks Notebook:
+
+  * `03_gold_layer_tables`
+* Creates business-ready aggregation tables
+
+---
+
+##  Pipeline Flow
+
+```text
+run_ingestion
+      ↓
+run_silver_cleaning
+      ↓
+run_fraud_logic
+      ↓
+run_gold_tables
+```
+
+---
+
+##  Data Validation Checks
+
+To ensure data quality and correctness, the following validations were implemented:
+
+### ✔ Row Count Validation
+
+* Verified total records after each stage
+
+### ✔ Fraud Distribution Check
+
+* Checked counts of fraud vs non-fraud transactions
+
+### ✔ Null Value Checks
+
+* Ensured critical fields (transaction_id, amount) are not null
+
+### ✔ Duplicate Detection
+
+* Confirmed no duplicate transaction records exist
+
+---
+
+##  Monitoring & Execution
+
+* Executed pipeline using Debug mode
+* Monitored execution in ADF Monitor tab
+* Verified all pipeline activities completed successfully
+
+---
+
+##  Artifacts
+
+Captured:
+
+* Master pipeline canvas
+* Pipeline execution results
+* Monitoring dashboard
+* Validation outputs
+
+Stored in:
+
+```bash
+docs/screenshots/
+```
+
+---
+
+## Key Learnings
+
+* Orchestrating multi-stage data pipelines
+* Integrating ADF with Databricks workflows
+* Implementing data validation strategies
+* Monitoring and debugging pipeline execution
+
+---
+
+## Challenges & Fixes
+
+* Resolved notebook execution issues by attaching correct cluster
+* Fixed pipeline failures by reviewing activity logs
+* Ensured overwrite mode for consistent data refresh
+* Verified correct execution order of pipeline stages
+
+---
+
+## Outcome
+
+Successfully built a production-style orchestrated pipeline that automates the end-to-end data flow while ensuring data quality and reliability.
+
+---
 
 
 
